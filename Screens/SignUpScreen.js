@@ -17,25 +17,24 @@ const SignUpScreen = ({navigation}) => {
 
     const user = auth.currentUser;
 
+     
     try {
         console.log(`Sign Up: ${user.displayName}`);
     } catch (error) {
         console.log(`Sign Up: ${user}`);
     }
 
+     
     //Register User
     const register = async () => {
         try {
-            const user = await createUserWithEmailAndPassword(
-                auth, email, password
-            );
+            const user = await createUserWithEmailAndPassword(auth, email, password);
             await updateProfile(auth.currentUser, {displayName: username});
             console.log(user);
-        } catch (error) {
-            console.log(error)
-        }
+        } catch (error) {console.log(error)}
     }
 
+    
     return(
      <SafeAreaView style={styles.screen}>
         <View style={styles.formView}>
@@ -70,9 +69,7 @@ const SignUpScreen = ({navigation}) => {
                         try {
                             await register();
                             nav.navigate('User');
-                        } catch (error) {
-                            console.log(error);
-                        }
+                        } catch (error) {console.log(error);}
                     }}>
                     <Text style={styles.text}> Sign Up</Text>
                 </TouchableOpacity>
@@ -131,5 +128,6 @@ const styles = StyleSheet.create({
         flex: 2
     },
 })
+
 
 export default SignUpScreen;
