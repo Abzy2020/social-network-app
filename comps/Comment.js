@@ -33,9 +33,7 @@ const Comment = (props) => {
                 <Text style={styles.info}>{ author }</Text>
             </View>
             <View>
-                <Text style={styles.content}>
-                    { caption }
-                </Text>
+                <Text style={styles.content}>{ caption }</Text>
             </View>
         </TouchableOpacity>
     )
