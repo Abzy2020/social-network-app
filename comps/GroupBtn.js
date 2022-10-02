@@ -28,9 +28,7 @@ const GroupBtn = (props) => {
     return(
         <TouchableOpacity
             style={styles.btn}
-            onPress={() => {
-                navigation.navigate('CreateGroup')
-            }}>
+            onPress={() => {navigation.navigate('CreateGroup')}}>
             <View>
                 <Text style={styles.text}>New Group</Text>
             </View>
