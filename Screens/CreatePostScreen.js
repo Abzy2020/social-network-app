@@ -33,9 +33,7 @@ const CreatePostScreen = ({navigation, route}) => {
                 title: caption,
             });
             console.log(`created doc: ${newDoc.id}`);
-        } catch (error) {
-            console.log(error);
-        }
+        } catch (error) {console.log(error);}
     }
 
     //Conditional rendering based on auth state
@@ -64,9 +62,7 @@ const CreatePostScreen = ({navigation, route}) => {
                 <Nav navi={navigation} style={styles.nav}/>
             </SafeAreaView>
         )
-    } else {
-        return <Login />
-    }
+    } else {return <Login />}
 }
 
 const styles = StyleSheet.create({
