@@ -36,27 +36,21 @@ const CreateGrpScreen = ({navigation}) => {
                 <TextInput 
                     style={styles.name}
                     placeholder='Name'
-                    onChangeText={text => {
-                        setGroupName(text);
-                    }} />
+                    onChangeText={text => {setGroupName(text);}} />
                 <Text style={{color: colors.text, marginTop: 20}}>Description</Text>
                 <TextInput 
                     placeholder='description'
                     multiline={true}
                     numberOfLines={10}
                     style={styles.desc}
-                    onChangeText={text => {
-                        setGroupDesc(text)
-                    }} />
+                    onChangeText={text => {setGroupDesc(text)}} />
                 <Text style={{color: colors.text, marginTop: 20}}>image url</Text>
                 <TextInput 
                     placeholder='image url'
                     multiline={true}
                     numberOfLines={4}
                     style={styles.desc}
-                    onChangeText={text => {
-                        setImgString(text)
-                    }} />
+                    onChangeText={text => {setImgString(text)}} />
                 <View style={styles.btnHolder}>
                     <TouchableOpacity style={styles.btn}
                         onPress={async () => {
