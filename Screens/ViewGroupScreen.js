@@ -25,11 +25,9 @@ const ViewGroupScreen = ({navigation, route}) => {
     const [groupPosts, setGroupPosts] = useState([]);
     const nav = useNavigation();
 
-    try {
-        console.log(`Group: ${user.displayName}`);
-    } catch (error) {
-        console.log(`Group: ${user}`);
-    }
+    
+    try {console.log(`Group: ${user.displayName}`);}
+    catch (error) {console.log(`Group: ${user}`);}
     
     try {
         var posts = groupPosts.map((post) => {
@@ -44,10 +42,9 @@ const ViewGroupScreen = ({navigation, route}) => {
                 />
             )
         });
-    } catch (error) {
-        console.log('posts not available');
-    }
+    } catch (error) {console.log('posts not available');}
     
+
     //read group posts
     const readPosts = async () => {
         try {
@@ -58,15 +55,13 @@ const ViewGroupScreen = ({navigation, route}) => {
             })
 
             setGroupPosts(prevPosts => prevPosts = posts);
-        } catch (error) {
-            console.log(error);
-        }
+        } catch (error) {console.log(error);}
     }
     console.log(groupPosts);
 
-    useEffect(() =>{
-        readPosts()
-    }, []);
+
+    useEffect(() =>{readPosts()}, []);
+
 
     if (groupPosts.length == 0) {
         return (
@@ -154,6 +149,7 @@ const ViewGroupScreen = ({navigation, route}) => {
     );}
 };
 
+
 const styles = StyleSheet.create({
     screen: {
         flex: 1
@@ -194,5 +190,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     }
 })
+
 
 export default ViewGroupScreen;
