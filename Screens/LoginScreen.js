@@ -16,9 +16,8 @@ const LoginScreen = ({navigation}) => {
 
     //Sign In User
     const signIn = async() => {
-        try {
-            await signInWithEmailAndPassword(auth, email, password);
-        } catch (error) {
+        try {await signInWithEmailAndPassword(auth, email, password);} 
+        catch (error) {
             console.log('could not log in');
             console.log(error);
         }
@@ -32,16 +31,12 @@ const LoginScreen = ({navigation}) => {
                 style = {styles.textfield}
                 placeholder='email'
                 placeholderTextColor={'grey'}
-                onChangeText={(text) => {
-                    setEmail(prevText => prevText = text);
-                }} />
+                onChangeText={(text) => {setEmail(prevText => prevText = text);}} />
             <TextInput
                 style = {styles.textfield}
                 placeholder='password'
                 placeholderTextColor={'grey'}
-                onChangeText={(text) => {
-                    setPassword(prevText => prevText = text);
-                }} />
+                onChangeText={(text) => {setPassword(prevText => prevText = text);}} />
             <View style={{flexDirection: 'row'}}>
                 <Text style={styles.haveAcc}>Already have an account?</Text>
                 <TouchableOpacity style={styles.btn} >
@@ -49,9 +44,7 @@ const LoginScreen = ({navigation}) => {
                         onPress={async ()=> {
                             await signIn();
                             nav.navigate('User');
-                        }}>
-                            Login
-                        </Text>
+                        }}> Login </Text>
                 </TouchableOpacity>
             </View>
         </View>
