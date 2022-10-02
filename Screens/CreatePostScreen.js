@@ -38,6 +38,7 @@ const CreatePostScreen = ({navigation, route}) => {
         }
     }
 
+    //Conditional rendering based on auth state
     if (user) {
         return(
             <SafeAreaView style={styles.screen}>
