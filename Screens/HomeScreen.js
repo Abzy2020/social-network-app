@@ -7,11 +7,8 @@ const HomeScreen = ({navigation}) => {
     
     const user = auth.currentUser;
 
-    try {
-        console.log(`Home: ${user.displayName}`);
-    } catch (error) {
-        console.log(`Home: ${user}`);
-    }
+    try {console.log(`Home: ${user.displayName}`);} 
+    catch (error) {console.log(`Home: ${user}`);}
     
     user ? user.reload() : user;
 
