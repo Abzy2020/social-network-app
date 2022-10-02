@@ -28,9 +28,7 @@ const PostBtn = (props) => {
         <TouchableOpacity
             style={styles.btn}
             onPress={() => {
-                navigation.navigate('CreatePost', {
-                    id: props.id
-                })
+                navigation.navigate('CreatePost', {id: props.id})
             }}>
             <View>
                 <Text style={styles.text}>compose</Text>
