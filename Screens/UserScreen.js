@@ -11,11 +11,8 @@ const UserScreen = ({navigation, route}) => {
     const nav = useNavigation();
     const user = auth.currentUser;
 
-    try {
-        console.log(`Profile: ${user.displayName}`);
-    } catch (error) {
-        console.log(`Profile: ${user}`);
-    }
+    try {console.log(`Profile: ${user.displayName}`);} 
+    catch (error) {console.log(`Profile: ${user}`);}
     
     user ? user.reload() : user;
 
