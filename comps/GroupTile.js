@@ -11,9 +11,7 @@ const GroupTile = (props) => {
     const description = props.description;
     const id = props.id
 
-    if (image == ''){
-        setImage(prevImage => prevImage = 'https://mcdn.wallpapersafari.com/medium/78/15/sp4v6Q.jpg')
-    }
+    if (image == ''){setImage(prevImage => prevImage = 'https://mcdn.wallpapersafari.com/medium/78/15/sp4v6Q.jpg')}
 
     return(
         <TouchableOpacity
@@ -28,10 +26,7 @@ const GroupTile = (props) => {
             }}>
             <ImageBackground 
                 style={styles.tile}
-                source={{
-                    uri: image
-                }}
-                >
+                source={{uri: image}}>
                 <Text style={styles.text}>{name}</Text>
             </ImageBackground>
         </TouchableOpacity>
