@@ -34,9 +34,7 @@ const ViewPostScreen = ({navigation, route}) => {
                 />
             )
         });
-    } catch (error) {
-        console.log('comments not available');
-    }
+    } catch (error) {console.log('comments not available');}
 
     //read post comments
     const readComments = async () => {
@@ -48,9 +46,7 @@ const ViewPostScreen = ({navigation, route}) => {
             })
 
             setCommentsList(prevComments => prevComments = comments);
-        } catch (error) {
-            console.log(error);
-        }
+        } catch (error) {console.log(error);}
     }
     console.log(commentsList);
 
@@ -62,14 +58,10 @@ const ViewPostScreen = ({navigation, route}) => {
                 title: replyComment,
             });
             console.log(`created doc: ${newDoc.id}`);
-        } catch (error) {
-            console.log(error);
-        }
+        } catch (error) {console.log(error);}
     }
 
-    useEffect(() =>{
-        readComments();
-    }, []);
+    useEffect(() =>{readComments();}, []);
 
     return(
         <SafeAreaView style={styles.screen}>
