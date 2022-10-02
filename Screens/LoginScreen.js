@@ -14,7 +14,7 @@ const LoginScreen = ({navigation}) => {
 
     const nav = useNavigation();
 
-    //TODO: Sign In User
+    //Sign In User
     const signIn = async() => {
         try {
             await signInWithEmailAndPassword(auth, email, password);
