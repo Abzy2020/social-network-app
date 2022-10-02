@@ -13,11 +13,8 @@ const GroupScreen = ({navigation}) => {
 
     const user = auth.currentUser;
 
-    try {
-        console.log(`Groups: ${user.displayName}`);
-    } catch (error) {
-        console.log(`Groups: ${user}`);
-    }
+    try {console.log(`Groups: ${user.displayName}`);} 
+    catch (error) {console.log(`Groups: ${user}`);}
 
     const { colors } = useTheme();
     const [groups, setGroups] = useState([]);
@@ -37,6 +34,7 @@ const GroupScreen = ({navigation}) => {
         )
     })
   
+    
     //read groups
     const showGroups = async() => {
         try {
@@ -46,14 +44,11 @@ const GroupScreen = ({navigation}) => {
                 groupsArr.push({...doc.data(), id: doc.id});
             })
             setGroups(groupsArr);
-        } catch (error) {
-            console.log(error);
-        }
+        } catch (error) {console.log(error);}
     }
     
-    useEffect(() => {
-        showGroups();
-    }, []);
+    
+    useEffect(() => {showGroups();}, []);
 
 
     if (groups.length == 0) {
