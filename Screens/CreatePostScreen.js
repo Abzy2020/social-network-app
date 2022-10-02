@@ -25,15 +25,7 @@ const CreatePostScreen = ({navigation, route}) => {
 
     console.log(`Create Post: ${user.displayName}`);
 
-    /*const test = async () => {
-        const postRef = doc(db, 'groups', id);
-        const group = await getDoc(postRef);
-    
-        console.log(group.data().posts);
-    }
-    test();*/
-
-    //update posts arrays
+    //CREATE posts
     const createPost = async () => {
         try {
             const newDoc = await addDoc(collection(db, `groups/${id}/posts`), {
