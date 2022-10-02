@@ -17,9 +17,8 @@ const CreateGrpScreen = ({navigation}) => {
     //create Group 
     const createGroup = async () => {
         try {
-            if (groupName == null || '') {
-                console.log('must have a group name');
-            } else{
+            if (groupName == null || '') {console.log('must have a group name');} 
+            else{
                 const newDoc = await addDoc(collection(db, 'groups'), {
                     name: groupName,
                     description: groupDesc,
@@ -27,9 +26,7 @@ const CreateGrpScreen = ({navigation}) => {
                 });
                 console.log(`created doc: ${newDoc.id}`);
             }
-        } catch (error) {
-            console.log(error);
-        }
+        } catch (error) {console.log(error);}
     };
 
     return(
