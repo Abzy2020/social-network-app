@@ -1,2 +1,2 @@
 # zybo
-Group based social network
+Group based social network/forum app
